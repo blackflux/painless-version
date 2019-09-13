@@ -1,7 +1,7 @@
 {
   "defaultBranch": "master",
   "contribBranch": "dev",
-  "repository": {"url": "https://github.com/blackflux/smart-version.git"},
+  "repository": {"url": "https://github.com/blackflux/painless-version.git"},
   "branches": {
     "dev": {"upstream": "master", "protection": "$full-dev", "create": true},
     "master": {"protection": "$full-master", "create": true},
