@@ -4,9 +4,9 @@
       "assorted/@npm-opensource"
     ],
     "variables": {
-      "repoKey": "blackflux/smart-version",
-      "packageName": "smart-version",
-      "projectName": "smart-version",
+      "repoKey": "blackflux/painless-version",
+      "packageName": "painless-version",
+      "projectName": "painless-version",
       "owner": "simlu",
       "ownerName": "Lukas Siemon",
       "mergeBot": "MrsFlux"

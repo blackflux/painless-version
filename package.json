@@ -1,10 +1,10 @@
 {
-  "name": "smart-version",
+  "name": "painless-version",
   "version": "0.0.0-development",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blackflux/smart-version.git"
+    "url": "https://github.com/blackflux/painless-version.git"
   },
   "author": "Lukas Siemon",
   "license": "MIT",
@@ -32,7 +32,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/blackflux/smart-version/blob/master/LICENSE"
+      "url": "https://github.com/blackflux/painless-version/blob/master/LICENSE"
     }
   ],
   "keywords": [
@@ -94,9 +94,9 @@
     "semantic-release": "npm run build-clean && npx semantic-release",
     "gardener": "node gardener"
   },
-  "homepage": "https://github.com/blackflux/smart-version#readme",
+  "homepage": "https://github.com/blackflux/painless-version#readme",
   "bugs": {
-    "url": "https://github.com/blackflux/smart-version/issues"
+    "url": "https://github.com/blackflux/painless-version/issues"
   },
   "dependencies": {
     "compare-versions": "3.5.1"
