@@ -14,7 +14,7 @@ Intuitive version management abstraction
 ## Install
 
 ```bash
-npm i --save object-rewrite
+npm i --save smart-version
 ```
 
 ## Getting Started
