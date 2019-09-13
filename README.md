@@ -1,11 +1,11 @@
-# smart-version
+# painless-version
 
-[![Build Status](https://circleci.com/gh/blackflux/smart-version.png?style=shield)](https://circleci.com/gh/blackflux/smart-version)
-[![Test Coverage](https://img.shields.io/coveralls/blackflux/smart-version/master.svg)](https://coveralls.io/github/blackflux/smart-version?branch=master)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=blackflux/smart-version)](https://dependabot.com)
-[![Dependencies](https://david-dm.org/blackflux/smart-version/status.svg)](https://david-dm.org/blackflux/smart-version)
-[![NPM](https://img.shields.io/npm/v/smart-version.svg)](https://www.npmjs.com/package/smart-version)
-[![Downloads](https://img.shields.io/npm/dt/smart-version.svg)](https://www.npmjs.com/package/smart-version)
+[![Build Status](https://circleci.com/gh/blackflux/painless-version.png?style=shield)](https://circleci.com/gh/blackflux/painless-version)
+[![Test Coverage](https://img.shields.io/coveralls/blackflux/painless-version/master.svg)](https://coveralls.io/github/blackflux/painless-version?branch=master)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=blackflux/painless-version)](https://dependabot.com)
+[![Dependencies](https://david-dm.org/blackflux/painless-version/status.svg)](https://david-dm.org/blackflux/painless-version)
+[![NPM](https://img.shields.io/npm/v/painless-version.svg)](https://www.npmjs.com/package/painless-version)
+[![Downloads](https://img.shields.io/npm/dt/painless-version.svg)](https://www.npmjs.com/package/painless-version)
 [![Semantic-Release](https://github.com/blackflux/js-gardener/blob/master/assets/icons/semver.svg)](https://github.com/semantic-release/semantic-release)
 [![Gardener](https://github.com/blackflux/js-gardener/blob/master/assets/badge.svg)](https://github.com/blackflux/js-gardener)
 
@@ -14,14 +14,14 @@ Intuitive version management abstraction
 ## Install
 
 ```bash
-npm i --save smart-version
+npm i --save painless-version
 ```
 
 ## Getting Started
 
 <!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
 ```js
-const sv = require('smart-version');
+const sv = require('painless-version');
 
 const version = '5.3.5';
 sv.test(`1.2.3 < ${version}`);
