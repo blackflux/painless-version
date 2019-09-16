@@ -21,10 +21,10 @@ npm i --save painless-version
 
 <!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
 ```js
-const sv = require('painless-version');
+const pv = require('painless-version');
 
 const version = '5.3.5';
-sv.test(`1.2.3 < ${version}`);
+pv.test(`1.2.3 < ${version}`);
 // => true
 
 ```
