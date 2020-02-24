@@ -1,9 +1,5 @@
-const assert = require('assert');
-const compareVersions = require('compare-versions');
+const test = require('./module/test');
+const deprecation = require('./module/deprecation');
 
-module.exports.test = (input) => {
-  const parsed = input.split(' ');
-  assert(parsed.length === 3, `Invalid Input: ${input}`);
-  const [lhs, cmp, rhs] = parsed;
-  return compareVersions.compare(lhs, rhs, cmp);
-};
+module.exports.test = test;
+module.exports.updateDeprecationHeaders = deprecation.updateDeprecationHeaders;
