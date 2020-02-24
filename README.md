@@ -33,7 +33,17 @@ pv.test(`1.2.3 < ${version}`);
 
 ### test(expression: String)
 
-Evaluate comparison string of form `LHS CMP RHS` where `LHS` and `RHS` are 
+Evaluate comparison string of form `LHS CMP RHS` where `LHS` and `RHS` are
 version strings and `CMP` is one of `<`, `<=`, `>`, `>=`, `=`.
 
 Under the hood this uses [compare-versions](https://www.npmjs.com/package/compare-versions).
+
+### updateDeprecationHeaders(headers: {}, { deprecationDate: Date, sunsetDurationInDays: Integer, onSunsetCb: Function = () => {} })
+
+Modifies the headers object in place assuming this is a response headers object.
+
+Updates headers [deprecation](https://tools.ietf.org/id/draft-dalal-deprecation-header-01.html) and [sunset](https://tools.ietf.org/id/draft-dalal-deprecation-header-01.html#rfc.section.5)
+
+Existing headers are only overwritten if the date present is further in the future.
+
+The `onSunsetCb` is called if the computed sunset day has passed.
