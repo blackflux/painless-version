@@ -7,8 +7,8 @@ describe('Testing updateDeprecationHeaders()', {
 }, () => {
   let update;
   beforeEach(() => {
-    update = (r, { date = new Date() } = {}) => {
-      sv.updateDeprecationHeaders(r, { deprecationDate: date, sunsetDurationInDays: 1 });
+    update = (r, { date = new Date(), fn = undefined } = {}) => {
+      sv.updateDeprecationHeaders(r, { deprecationDate: date, sunsetDurationInDays: 1, onSunsetFn: fn });
       return r;
     };
   });
@@ -25,6 +25,20 @@ describe('Testing updateDeprecationHeaders()', {
       deprecation: 'date="Mon, 24 Feb 2020 21:33:44 GMT"',
       sunset: 'Tue, 25 Feb 2020 21:33:44 GMT'
     });
+  });
+
+  it('Testing onSunsetFn called', () => {
+    let called = false;
+    const fn = () => {
+      called = true;
+    };
+    update({}, { fn });
+    expect(called).to.equal(false);
+    update({}, {
+      fn,
+      date: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 52 * 30)
+    });
+    expect(called).to.equal(true);
   });
 
   it('Testing headers are overwritten if younger', () => {
