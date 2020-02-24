@@ -19,7 +19,7 @@ const HEADER_REGEX = (() => {
 module.exports.updateDeprecationHeaders = (headers, {
   deprecationDate,
   sunsetDurationInDays,
-  onSunsetFn = () => {}
+  onSunsetCb = () => {}
 }) => {
   assert(headers instanceof Object && !Array.isArray(headers));
   assert(deprecationDate instanceof Date);
@@ -47,6 +47,6 @@ module.exports.updateDeprecationHeaders = (headers, {
     set(headers, 'sunset', sunsetDate.toUTCString());
   }
   if (sunsetDate < new Date()) {
-    onSunsetFn();
+    onSunsetCb();
   }
 };

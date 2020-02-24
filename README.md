@@ -38,7 +38,7 @@ version strings and `CMP` is one of `<`, `<=`, `>`, `>=`, `=`.
 
 Under the hood this uses [compare-versions](https://www.npmjs.com/package/compare-versions).
 
-### updateDeprecationHeaders(headers: {}, { deprecationDate: Date, sunsetDurationInDays: Integer, onSunsetFn: Function = () => {} })
+### updateDeprecationHeaders(headers: {}, { deprecationDate: Date, sunsetDurationInDays: Integer, onSunsetCb: Function = () => {} })
 
 Modifies the headers object in place assuming this is a response headers object.
 
@@ -46,4 +46,4 @@ Updates headers [deprecation](https://tools.ietf.org/id/draft-dalal-deprecation-
 
 Existing headers are only overwritten if the date present is further in the future.
 
-The `onSunsetFn` is called if the computed sunset day has passed.
+The `onSunsetCb` is called if the computed sunset day has passed.

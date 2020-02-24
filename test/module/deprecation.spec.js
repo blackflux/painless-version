@@ -8,7 +8,7 @@ describe('Testing updateDeprecationHeaders()', {
   let testRunner;
   beforeEach(() => {
     testRunner = (r, { date = new Date(), fn = undefined } = {}) => {
-      sv.updateDeprecationHeaders(r, { deprecationDate: date, sunsetDurationInDays: 1, onSunsetFn: fn });
+      sv.updateDeprecationHeaders(r, { deprecationDate: date, sunsetDurationInDays: 1, onSunsetCb: fn });
       return r;
     };
   });
@@ -27,7 +27,7 @@ describe('Testing updateDeprecationHeaders()', {
     });
   });
 
-  it('Testing onSunsetFn called', () => {
+  it('Testing onSunsetCb called', () => {
     let called = false;
     const fn = () => {
       called = true;
