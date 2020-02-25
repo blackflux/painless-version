@@ -47,6 +47,10 @@ module.exports.updateDeprecationHeaders = (headers, {
     set(headers, 'sunset', sunsetDate.toUTCString());
   }
   if (sunsetDate < new Date()) {
-    onSunsetCb();
+    onSunsetCb({
+      sunsetDate: new Date(sunsetDate),
+      deprecationDate: new Date(deprecationDate),
+      sunsetDurationInDays
+    });
   }
 };
