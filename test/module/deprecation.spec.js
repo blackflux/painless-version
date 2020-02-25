@@ -7,8 +7,11 @@ describe('Testing updateDeprecationHeaders()', {
 }, () => {
   let testRunner;
   beforeEach(() => {
-    testRunner = (r, { date = new Date(), fn = undefined } = {}) => {
-      sv.updateDeprecationHeaders(r, { deprecationDate: date, sunsetDurationInDays: 1, onSunsetCb: fn });
+    testRunner = (r, { date = new Date() } = {}) => {
+      sv.updateDeprecationHeaders(r, {
+        deprecationDate: date,
+        sunsetDate: new Date(date.getTime() + 1000 * 60 * 60 * 24)
+      });
       return r;
     };
   });
@@ -25,22 +28,6 @@ describe('Testing updateDeprecationHeaders()', {
       deprecation: 'date="Mon, 24 Feb 2020 21:33:44 GMT"',
       sunset: 'Tue, 25 Feb 2020 21:33:44 GMT'
     });
-  });
-
-  it('Testing onSunsetCb called', () => {
-    const lastArgs = [];
-    const deprecationDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 52 * 30);
-    const fn = (...args) => {
-      lastArgs.push(...args);
-    };
-    testRunner({}, { fn });
-    expect(lastArgs).to.deep.equal([]);
-    testRunner({}, { fn, date: deprecationDate });
-    expect(lastArgs).to.deep.equal([{
-      deprecationDate,
-      sunsetDate: new Date(deprecationDate.getTime() + 1000 * 60 * 60 * 24),
-      sunsetDurationInDays: 1
-    }]);
   });
 
   it('Testing headers are overwritten if younger', () => {
