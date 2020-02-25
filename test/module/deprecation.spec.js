@@ -28,17 +28,19 @@ describe('Testing updateDeprecationHeaders()', {
   });
 
   it('Testing onSunsetCb called', () => {
-    let called = false;
-    const fn = () => {
-      called = true;
+    const lastArgs = [];
+    const deprecationDate = new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 52 * 30);
+    const fn = (...args) => {
+      lastArgs.push(...args);
     };
     testRunner({}, { fn });
-    expect(called).to.equal(false);
-    testRunner({}, {
-      fn,
-      date: new Date(new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 52 * 30)
-    });
-    expect(called).to.equal(true);
+    expect(lastArgs).to.deep.equal([]);
+    testRunner({}, { fn, date: deprecationDate });
+    expect(lastArgs).to.deep.equal([{
+      deprecationDate,
+      sunsetDate: new Date(deprecationDate.getTime() + 1000 * 60 * 60 * 24),
+      sunsetDurationInDays: 1
+    }]);
   });
 
   it('Testing headers are overwritten if younger', () => {
