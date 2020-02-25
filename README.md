@@ -38,7 +38,7 @@ version strings and `CMP` is one of `<`, `<=`, `>`, `>=`, `=`.
 
 Under the hood this uses [compare-versions](https://www.npmjs.com/package/compare-versions).
 
-### updateDeprecationHeaders(headers: {}, { deprecationDate: Date, sunsetDurationInDays: Integer })
+### updateDeprecationHeaders(headers: {}, { deprecationDate: Date, sunsetDate: Date })
 
 Modifies the headers object in place assuming this is a response headers object.
 
