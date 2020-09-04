@@ -8,6 +8,7 @@
       "packageName": "painless-version",
       "projectName": "painless-version",
       "owner": "simlu",
+      "nodeVersion": "10",
       "ownerName": "Lukas Siemon",
       "mergeBot": "MrsFlux"
     }
