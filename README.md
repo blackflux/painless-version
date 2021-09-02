@@ -26,7 +26,6 @@ const pv = require('painless-version');
 const version = '5.3.5';
 pv.test(`1.2.3 < ${version}`);
 // => true
-
 ```
 
 ## Functions
