@@ -19,12 +19,12 @@ npm i --save painless-version
 
 ## Getting Started
 
-<!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
+<!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies, mocha/no-global-tests -->
 ```js
-const pv = require('painless-version');
+import { test } from 'painless-version';
 
 const version = '5.3.5';
-pv.test(`1.2.3 < ${version}`);
+test(`1.2.3 < ${version}`);
 // => true
 ```
 

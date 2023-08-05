@@ -1,7 +1,7 @@
-const assert = require('assert');
-const compareVersions = require('compare-versions');
+import assert from 'assert';
+import compareVersions from 'compare-versions';
 
-module.exports = (input) => {
+export default (input) => {
   assert(typeof input === 'string');
   const parsed = input.split(' ');
   assert(parsed.length === 3, `Invalid Input: ${input}`);

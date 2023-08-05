@@ -1,5 +1,5 @@
-const assert = require('assert');
-const set = require('lodash.set');
+import assert from 'assert';
+import set from 'lodash.set';
 
 const HEADER_REGEX = (() => {
   const dateFormat = [
@@ -16,7 +16,7 @@ const HEADER_REGEX = (() => {
   };
 })();
 
-module.exports.updateDeprecationHeaders = (headers, {
+export const updateDeprecationHeaders = (headers, {
   deprecationDate,
   sunsetDate
 }) => {
