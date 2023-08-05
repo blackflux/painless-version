@@ -1,6 +1,6 @@
-const expect = require('chai').expect;
-const { describe } = require('node-tdd');
-const sv = require('../../src/index');
+import { expect } from 'chai';
+import { describe } from 'node-tdd';
+import { updateDeprecationHeaders } from '../../src/index.js';
 
 describe('Testing updateDeprecationHeaders()', {
   timestamp: 1582580024
@@ -8,7 +8,7 @@ describe('Testing updateDeprecationHeaders()', {
   let testRunner;
   beforeEach(() => {
     testRunner = (r, { date = new Date() } = {}) => {
-      sv.updateDeprecationHeaders(r, {
+      updateDeprecationHeaders(r, {
         deprecationDate: date,
         sunsetDate: new Date(date.getTime() + 1000 * 60 * 60 * 24)
       });
