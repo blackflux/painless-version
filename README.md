@@ -19,7 +19,7 @@ npm i --save painless-version
 
 ## Getting Started
 
-<!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
+<!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies, mocha/no-global-tests -->
 ```js
 import { test } from 'painless-version';
 
