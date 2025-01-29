@@ -6,6 +6,7 @@ describe('Testing updateDeprecationHeaders()', {
   timestamp: 1582580024
 }, () => {
   let testRunner;
+
   beforeEach(() => {
     testRunner = (r, { date = new Date() } = {}) => {
       updateDeprecationHeaders(r, {

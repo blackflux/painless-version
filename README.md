@@ -13,7 +13,7 @@ Intuitive version management abstraction
 
 ## Install
 
-```bash
+```
 npm i --save painless-version
 ```
 
